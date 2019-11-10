@@ -11,6 +11,7 @@ import { AlertController } from '@ionic/angular';
 })
 export class HomePage {
   public subscriccion: FormGroup;
+  public subscribe:Boolean = true;
   constructor(private fb: FormBuilder, private apiservice: ApiserviceService, private alertCtrl: AlertController) {
 
     this.subscriccion = fb.group({
@@ -21,6 +22,9 @@ export class HomePage {
 
   }
 
+  showForm(){
+this.subscribe = true;
+  }
   onSubmit(datos){
     const contacto = datos;
     console.log(contacto);
@@ -42,6 +46,7 @@ export class HomePage {
         {
           text: "OK",
           handler: () => {
+            //this.subscribe = false;
             //this.router.navigate(["/inicio"]);
           }
         }

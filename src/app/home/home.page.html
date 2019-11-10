@@ -1,21 +1,21 @@
 
-<ion-content style="width: 100%;">
-  <ion-row style="display: flex; flex-direction: row; justify-content: center; margin-top: 50%">
-            <ion-card>
+<ion-content >
+  <ion-row style="display: flex; flex-direction: row; justify-content: center; margin-top: 10%">
+            <ion-card *ngIf="subscribe">
               
-            <ion-item style="border: solid black 1px; align-content: center;">
+            <ion-item>
                 <ion-title class="title">Subscribete a WhatsApp promos</ion-title>
                 </ion-item>
           <form class="forms" [formGroup]="subscriccion" (ngSubmit)="onSubmit(subscriccion.value)">
-              <ion-item>
+              <ion-item class="input">
                 <ion-label class="item" position="floating">Nombre</ion-label>
                 <ion-input class="item" type="text" placeholder="Fulano" formControlName="nombre"></ion-input>
               </ion-item>
-              <ion-item>
+               <ion-item class="input">
                 <ion-label class="item"  position="floating">Apellido</ion-label>
                 <ion-input class="item" type="text" placeholder="Arias" formControlName="apellido"></ion-input>
               </ion-item>
-              <ion-item>
+               <ion-item class="input">
                 <ion-label class="item" position="floating">Numero de WhatsApp</ion-label>
                 <ion-input class="item" type="tel" placeholder="67634657" formControlName="telefono"></ion-input>
               </ion-item>           
@@ -26,6 +26,11 @@
               </div> 
             </form>
            
+        </ion-card>
+        <ion-card  style="justify-content: center;display: flex;"*ngIf="!subscribe">
+          <ion-button (click)="showForm()">
+            Subscribete
+          </ion-button>
         </ion-card>
       </ion-row>
 
