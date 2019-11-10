@@ -1,0 +1,33 @@
+
+<ion-content style="width: 100%;">
+  <ion-row style="display: flex; flex-direction: row; justify-content: center; margin-top: 50%">
+            <ion-card>
+              
+            <ion-item style="border: solid black 1px; align-content: center;">
+                <ion-title class="title">Subscribete a WhatsApp promos</ion-title>
+                </ion-item>
+          <form class="forms" [formGroup]="subscriccion" (ngSubmit)="onSubmit(subscriccion.value)">
+              <ion-item>
+                <ion-label class="item" position="floating">Nombre</ion-label>
+                <ion-input class="item" type="text" placeholder="Fulano" formControlName="nombre"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label class="item"  position="floating">Apellido</ion-label>
+                <ion-input class="item" type="text" placeholder="Arias" formControlName="apellido"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label class="item" position="floating">Numero de WhatsApp</ion-label>
+                <ion-input class="item" type="tel" placeholder="67634657" formControlName="telefono"></ion-input>
+              </ion-item>           
+              <div class="boton">
+                  <ion-button  type="submit" [disabled]="!subscriccion.valid">
+                      Enviar Datos
+                    </ion-button>  
+              </div> 
+            </form>
+           
+        </ion-card>
+      </ion-row>
+
+ 
+</ion-content>
